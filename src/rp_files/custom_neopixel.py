@@ -70,10 +70,10 @@ class C_Neopixel:
     def __getitem__(self, idx):
         return self.get_pixel(idx)
 
-    def show(self, byte_arr, offset):
-        for i in range(self.num_leds):
-            self.pixels[i] = int(byte_arr[3 * i + offset] << 16) + int(byte_arr[3 * i + 1 + offset] << 8) + int(
-                byte_arr[3 * i + 2 + offset])
+    def show(self, data):
+        self.sm.put(data, 8)
+
+    def off(self):
         self.sm.put(self.pixels, 8)
 
 
