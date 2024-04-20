@@ -41,7 +41,6 @@ stream = p.open(format=FORMAT,
                 input_device_index=loopback_device_index)
 
 
-
 print("Listening...")
 
 try:
